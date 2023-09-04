@@ -1,0 +1,703 @@
+/**
+ * White compact & high contrast reveal.js theme, with headers not in capitals.
+ *
+ * By Peter Kehl. Based on white.(s)css by Hakim El Hattab, http://hakim.se
+ *
+ * - Keep the source similar to black.css - for easy comparison.
+ * - $mainFontSize controls code blocks, too (although under some ratio).
+ */
+@import url(./fonts/source-sans-pro/source-sans-pro.css);
+section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
+  color: #fff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;0,600;1,100;1,300;1,400;1,600&display=swap');
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+:root {
+  --r-background-color: #fff;
+  /* --r-main-font: Simple Print, Helvetica, sans-serif; */
+  --r-main-font: Simple Print, Helvetica, sans-serif;
+
+  --r-main-font-size: 50px;
+  --r-main-color: #000; 
+  --r-block-margin: 20px;
+  --r-heading-margin: 0 0 20px 0;
+  --r-heading-font: Fibel Vienna, Helvetica, sans-serif;
+  --r-heading-color: #000;
+  --r-heading-line-height: 1.2;
+  --r-heading-letter-spacing: normal;
+  --r-heading-text-transform: none;
+  --r-heading-text-shadow: none;
+  --r-heading-font-weight: 450;
+  --r-heading1-text-shadow: none;
+  /* --r-heading1-size: 2.5em; */
+  --r-heading1-size: 5em;
+  --r-heading2-size: 1.6em;
+  --r-heading3-size: 1.3em;
+  --r-heading4-size: 1em;
+  --r-code-font: monospace;
+  --r-link-color: #2a76dd;
+  --r-link-color-dark: #1a53a1;
+  --r-link-color-hover: #6ca0e8;
+  --r-selection-background-color: #98bdef;
+  --r-selection-color: #fff;
+}
+
+.reveal-viewport {
+  background: #fff;
+  background-color: var(--r-background-color);
+}
+
+.reveal {
+  font-family: var(--r-main-font);
+  font-size: var(--r-main-font-size);
+  font-weight: normal;
+  color: var(--r-main-color);
+}
+
+.reveal ::selection {
+  color: var(--r-selection-color);
+  background: var(--r-selection-background-color);
+  text-shadow: none;
+}
+
+.reveal ::-moz-selection {
+  color: var(--r-selection-color);
+  background: var(--r-selection-background-color);
+  text-shadow: none;
+}
+
+.reveal .slides section,
+.reveal .slides section > section {
+  /* line-height: 1.3; */
+  font-weight: inherit;
+}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: var(--r-heading-margin);
+  color: var(--r-heading-color);
+  font-family: var(--r-heading-font);
+  font-weight: var(--r-heading-font-weight);
+  line-height: var(--r-heading-line-height);
+  letter-spacing: var(--r-heading-letter-spacing);
+  text-transform: var(--r-heading-text-transform);
+  text-shadow: var(--r-heading-text-shadow);
+  word-wrap: break-word;
+}
+
+.reveal h1 {
+  font-size: var(--r-heading1-size);
+}
+
+.reveal h2 {
+  font-size: var(--r-heading2-size);
+}
+
+.reveal h3 {
+  font-size: var(--r-heading3-size);
+}
+
+.reveal h4 {
+  font-size: var(--r-heading4-size);
+}
+
+.reveal h1 {
+  text-shadow: var(--r-heading1-text-shadow);
+}
+
+/*********************************************
+ * OTHER
+ *********************************************/
+.reveal p {
+  margin: var(--r-block-margin) 0;
+  /* line-height: 1.3; */
+  line-height: 0.75em;
+}
+
+/* Remove trailing margins after titles */
+.reveal h1:last-child,
+.reveal h2:last-child,
+.reveal h3:last-child,
+.reveal h4:last-child,
+.reveal h5:last-child,
+.reveal h6:last-child {
+  margin-bottom: 0;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+.reveal strong,
+.reveal b {
+  font-weight: bold;
+}
+
+.reveal em {
+  font-style: italic;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  /* display: inline-flexbox; */
+  text-align: left;
+  margin: 0 0 0 1em;
+  /* margin: 0 0 0 0; */
+  /* margin-bottom: -0.5em;
+  margin-top: -0.5em; */
+  /* display: flex; */
+}
+
+.reveal ol {
+  list-style-type: decimal;
+}
+
+.reveal ul {
+  list-style-type: disc;
+}
+
+.reveal ul ul {
+  list-style-type: square;
+  /* margin-bottom: -0.5em;
+  margin-top: -0.5em; */
+  /* padding-top: -0.5em;
+  padding-bottom: -0.5em; */
+  /* margin-bottom: -0.5em; */
+}
+
+.reveal ul ul ul {
+  list-style-type: circle;
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 50px;
+  /* margin-bottom: -0.5em;
+  margin-top: -0.5em; */
+}
+
+.reveal dt {
+  font-weight: bold;
+}
+
+.reveal dd {
+  margin-left: 40px;
+}
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: var(--r-block-margin) auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block;
+}
+
+.reveal q {
+  font-style: italic;
+}
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: var(--r-block-margin) auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: var(--r-code-font);
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.reveal code {
+  font-family: var(--r-code-font);
+  text-transform: none;
+  tab-size: 2;
+}
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal;
+}
+
+.reveal .code-wrapper {
+  white-space: normal;
+}
+
+.reveal .code-wrapper code {
+  white-space: pre;
+}
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.reveal table th {
+  font-weight: bold;
+}
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid;
+}
+
+.reveal table th[align=center],
+.reveal table td[align=center] {
+  text-align: center;
+}
+
+.reveal table th[align=right],
+.reveal table td[align=right] {
+  text-align: right;
+}
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.reveal sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+.reveal sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top;
+}
+
+.reveal small * {
+  vertical-align: top;
+}
+
+.reveal img {
+  margin: var(--r-block-margin) 0;
+}
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: var(--r-link-color);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.reveal a:hover {
+  color: var(--r-link-color-hover);
+  text-shadow: none;
+  border: none;
+}
+
+.reveal .roll span:after {
+  color: #fff;
+  background: var(--r-link-color-dark);
+}
+
+/*********************************************
+ * Frame helper
+ *********************************************/
+.reveal .r-frame {
+  border: 4px solid var(--r-main-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.reveal a .r-frame {
+  transition: all 0.15s linear;
+}
+
+.reveal a:hover .r-frame {
+  border-color: var(--r-link-color);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls {
+  color: var(--r-link-color);
+}
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--r-link-color);
+}
+
+/*********************************************
+ * PRINT BACKGROUND
+ *********************************************/
+@media print {
+  .backgrounds {
+    background-color: var(--r-background-color);
+  }
+}
+
+/*********************************************
+ * ADD-ONS
+ *********************************************/
+
+
+/*********************************************
+ * https://codepen.io/alvarotrigo/pen/qBXeJab
+ *********************************************/
+
+/* @import url(https://fonts.googleapis.com/css?family=Montserrat); */
+
+/* html, body{
+  height: 100%;
+  font-weight: 800;
+} */
+
+/* body{
+  background: yellow;
+  font-family: Arial;
+} */
+
+svg {
+    /* display: block; */
+    font: 5em var(--r-heading-font);
+    letter-spacing: 0.01em;
+    width: 960px;
+    height: 300px;
+    /* margin: 0 auto; */
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 3px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: #00E3CC;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #32A89C;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #009688;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #44E3D3;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: #00635A;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}
+
+/*********************************************
+ * https://blog.hubspot.com/website/css-fade-in
+ *********************************************/
+
+.fade-in-text {
+  /* font-family: Arial;
+  font-size: 150px; */
+  animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/*********************************************
+ * headers & footers
+ source: https://stackoverflow.com/questions/34706859/set-header-and-footer-reveal-js-presentation
+ *********************************************/
+
+/* #header-left {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+#header-right {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+#footer-left {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+} */
+
+/* .fixed-header, .fixed-footer{
+  width: 100%;
+  /* position: fixed; */
+  /* position: fixed; */
+  /* background: #333; */
+  /* padding: 10px 0; */
+  /* color: #fff; */
+  /* top: 0px; */
+/* }  */
+
+/*********************************************
+ * headers & footers
+ source: https://github.com/hakimel/reveal.js/issues/2486
+ *********************************************/
+
+.special-header {
+  position: absolute;
+  padding: 10px 20px 10px 0px;
+  top: 30px;
+  left: 0px;
+  z-index:500; 
+  /* background-color: rgba(0,0,0,0.5) */
+}
+
+.special-body {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  -ms-transform: translate(-50%, 50%);
+  transform: translate(0%, -50%);
+}
+
+.special-slide {
+  width: 100%;
+  height: 100%;
+} 
+
+#Don {
+  position: absolute;
+  /* padding: 10px 20px 10px 0px; */
+  /* top: 30px; */
+  justify-self: left;
+  left: 0px;
+  bottom: 0dvh;
+  width: 40dvh; 
+  /* height: 30dvw; */
+  z-index: -500; 
+}
+
+#Bob {
+  position: absolute;
+  /* padding: 10px 20px 10px 0px; */
+  justify-self: right;
+  /* top: 30px; */
+  right: 0px;
+  bottom: 0dvh;
+  width: 60dvh; 
+  /* height: 75dvw; */
+  z-index: -500; 
+}
+
+#BobDonText {
+  position: absolute;
+  justify-self: right;
+  top: 15dvh;
+  right: 0px;
+}
+
+#seventies-synths {
+  position: absolute;
+  /* padding: 10px 20px 10px 0px; */
+  justify-self: right;
+  /* top: 30px; */
+  right: 0px;
+  bottom: 4dvh;
+  /* width: 5dvh;  */
+  height: 30dvw;
+  z-index: -500; 
+}
+
+#eighties-synths {
+  position: relative;
+  /* padding: 10px 20px 10px 0px; */
+  justify-self: center;
+  top: 20dvh;
+  right: 0px;
+  /* bottom: -100dvh; */
+  width: 60dvw; 
+  /* height: 30dvw; */
+  z-index: -500; 
+}
+
+#computer-midi-1980s {
+  position: absolute;
+  scale: 80%;
+  /* padding: 10px 20px 10px 0px; */
+  justify-self: left;
+  top: 0px;
+  left: 0px;
+  /* bottom: -100dvh; */
+  /* width: 80dvw;  */
+  /* height: 30dvw; */
+  z-index: -500; 
+}
+
+#midi-ports {
+  position: absolute;
+  scale: 100%;
+  /* padding: 10px 20px 10px 0px; */
+  justify-self: center;
+  top: 10dvh;
+  left: 0px;
+  /* bottom: -100dvh; */
+  /* width: 80dvw;  */
+  /* height: 30dvw; */
+  z-index: -500; 
+}
+
+#star-config {
+  position: absolute;
+  scale: 60%;
+  /* padding: 10px 20px 10px 0px; */
+  justify-self: center;
+  top: -10dvh;
+  left: 0px;
+  /* bottom: -100dvh; */
+  /* width: 70dvw;  */
+  /* height: 30dvw; */
+  z-index: -500; 
+}
+
+.video-centered {
+  position: relative;
+  scale: 100%;
+  /* padding: 10px 20px 10px 0px; */
+  justify-self: center;
+  top: 15dvh;
+  /* left: 0px; */
+  /* bottom: -100dvh; */
+  /* width: 70dvw;  */
+  /* height: 30dvw; */
+  z-index: -500; 
+}
+
+#status-byte {
+  position: absolute;
+  scale: 60%;
+  /* padding: 10px 20px 10px 0px; */
+  justify-self: center;
+  top: 5dvh;
+  left: 0px;
+  /* bottom: -100dvh; */
+  /* width: 70dvw;  */
+  /* height: 30dvw; */
+  z-index: -500; 
+}
+
+#data-bytes {
+  position: absolute;
+  scale: 55%;
+  /* padding: 10px 20px 10px 0px; */
+  justify-self: center;
+  top: -20dvh;
+  /* left: 0px; */
+  /* bottom: -100dvh; */
+  /* width: 70dvw;  */
+  /* height: 30dvw; */
+  z-index: -500; 
+}
+
+#single-note {
+  position: relative;
+  scale: 55%;
+  /* padding: 10px 20px 10px 0px; */
+  justify-self: center;
+  top: 3dvh;
+  /* left: 0px; */
+  /* bottom: -100dvh; */
+  /* width: 70dvw;  */
+  /* height: 30dvw; */
+  z-index: -500; 
+}
+
+#nums-small {
+  font-family: monospace;
+  font-size: smaller;
+}
+
+#blue {
+  color: blue;
+}
+
+#green {
+  color: green;
+}
+
+#red {
+  color: red;
+}
+
+#orange {
+  color: orange;
+}
+
+#purple {
+  color: purple;
+}
+
+.reveal .slide-number {
+  font-style: italic;
+  font-size: 0.2em;
+  position: fixed;
+  /* text-align: left; */
+  /* -ms-text-justify: left; */
+  /* position: absolute; */
+  /* position: relative; */
+  /* justify-content: center; */
+  /* color: #ffffff;  */
+}

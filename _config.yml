@@ -9,11 +9,11 @@ reveal:
   title_slide:        true
 
 # Setup
-title:                Jekyll and Slide
+title:                Studio Methods — Slides
 tagline:              "Markdown slides in Jekyll using reveal.js"
-description:          "A template for creating slide decks using Markdown and <a href='//jekyllrb.com'>Jekyll</a>, using <a href='//github.com/poole/lanyon'>Lanyon</a> by <a href='//twitter.com/mdo'>@mdo</a>."
+description:          "Slides for Louis Goldford's Studio Methods Seminar"
 url:                  http://admhlt.github.io/jekyll-and-slide
-baseurl:              /jekyll-and-slide
+baseurl:              /studio-methods-slides
 markdown:             kramdown
 kramdown:
   input:              GFM
@@ -25,9 +25,9 @@ collections:
 
 # About/contact
 author:
-  name:               Adam Hollett
-  url:                https://twitter.com/admhlt
-  email:              mail@adamhollett.com
+  name:               Louis Goldford  
+  url:                https://www.louisgoldford.com  
+  email:              Louis.Goldford@mh-luebeck.de  
 
 # YAML defaults
 defaults:
